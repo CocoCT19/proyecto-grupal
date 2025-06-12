@@ -1,18 +1,90 @@
-# PHP y JavaScript
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Sección: PHP y JavaScript</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+    }
 
-## ¿Qué es PHP?
+    h1, h2 {
+      color: #2c3e50;
+    }
 
-PHP (Hypertext Preprocessor) es un lenguaje de programación del lado del servidor que se utiliza principalmente para desarrollar aplicaciones web dinámicas. Se ejecuta en el servidor y genera contenido HTML que se envía al navegador del usuario.
+    .section {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
 
-### Características de PHP:
-- Lenguaje de código abierto
-- Fácil de integrar con HTML
-- Ampliamente usado en CMS como WordPress
-- Compatible con múltiples bases de datos como MySQL y PostgreSQL
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #3498db;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-### Ejemplo básico de PHP:
+    button:hover {
+      background-color: #2980b9;
+    }
 
-```php
-<?php
-echo "Hola desde PHP";
-?>
+    .resultado {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Sección PHP y JavaScript</h1>
+
+  <!-- Sección de JavaScript -->
+  <div class="section">
+    <h2>Ejemplo Interactivo con JavaScript</h2>
+    <p>Haz clic en el botón para mostrar un saludo:</p>
+    <button onclick="mostrarSaludo()">Saludar con JavaScript</button>
+    <p class="resultado" id="saludo-js"></p>
+  </div>
+
+  <!-- Sección de PHP -->
+  <div class="section">
+    <h2>Ejemplo Dinámico con PHP</h2>
+    <p>El saludo generado con PHP según la hora del servidor es:</p>
+    <div class="resultado">
+      <?php
+        date_default_timezone_set("America/Bogota"); // Ajusta a tu zona
+        $hora = date("H");
+        $usuario = "Visitante";
+
+        if ($hora < 12) {
+          $mensaje = "Buenos días";
+        } elseif ($hora < 18) {
+          $mensaje = "Buenas tardes";
+        } else {
+          $mensaje = "Buenas noches";
+        }
+
+        echo "$mensaje, $usuario.";
+      ?>
+    </div>
+  </div>
+
+  <script>
+    function mostrarSaludo() {
+      const nombre = prompt("¿Cuál es tu nombre?");
+      const saludo = nombre ? `¡Hola, ${nombre}! Bienvenido.` : "¡Hola! Bienvenido.";
+      document.getElementById("saludo-js").textContent = saludo;
+    }
+  </script>
+
+</body>
+</html>
+
+
