@@ -1,0 +1,55 @@
+
+  .lenguajes {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #eef7ff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.lenguaje-box {
+  background-color: #ffffff;
+  margin: 20px 0;
+  padding: 20px;
+  border-left: 6px solid #007acc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+}
+
+.lenguaje-box h3 {
+  color: #007acc;
+  margin-bottom: 10px;
+}
+
+.lenguaje-box ul {
+  margin-top: 10px;
+  padding-left: 20px;
+  list-style: none;
+}
+
+.lenguaje-box ul li::before {
+  content: "✔️ ";
+}
+
+.comparativa {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.comparativa th,
+.comparativa td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+}
+
+.comparativa th {
+  background-color: #007acc;
+  color: white;
+}
+
+.comparativa tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
