@@ -4,6 +4,72 @@
   <meta charset="UTF-8">
   <title>Inicio</title>
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Estilo básico para mejorar la presentación */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 2rem;
+      background-color: #fff;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #222;
+      color: #fff;
+    }
+
+    .language-info {
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .language-info:hover {
+      background-color: #eef;
+    }
+
+    .description {
+      display: none;
+      margin-top: 0.5rem;
+      padding-left: 1rem;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -20,12 +86,48 @@
 
   <main>
     <h1>Bienvenido</h1>
-    <p>Explora información sobre distintos lenguajes de programación.</p>
+    <p>Explora información sobre distintos lenguajes de programación. Haz clic en un lenguaje para ver más detalles:</p>
+
+    <section>
+      <div class="language-info" onclick="toggleInfo('php')">
+        <h2>PHP</h2>
+        <div id="php" class="description">
+          <p>PHP es un lenguaje de programación del lado del servidor diseñado para el desarrollo web. Es ampliamente usado para crear sitios dinámicos.</p>
+        </div>
+      </div>
+
+      <div class="language-info" onclick="toggleInfo('js')">
+        <h2>JavaScript</h2>
+        <div id="js" class="description">
+          <p>JavaScript es un lenguaje de programación que se ejecuta en el navegador y permite crear sitios web interactivos. Es esencial para el desarrollo front-end.</p>
+        </div>
+      </div>
+
+      <div class="language-info" onclick="toggleInfo('python')">
+        <h2>Python</h2>
+        <div id="python" class="description">
+          <p>Python es un lenguaje versátil, fácil de aprender y muy utilizado en ciencia de datos, inteligencia artificial, automatización y desarrollo web.</p>
+        </div>
+      </div>
+
+      <div class="language-info" onclick="toggleInfo('java')">
+        <h2>Java</h2>
+        <div id="java" class="description">
+          <p>Java es un lenguaje orientado a objetos, usado para aplicaciones empresariales, desarrollo móvil (Android) y sistemas complejos de backend.</p>
+        </div>
+      </div>
+    </section>
   </main>
 
-  
   <footer>
     <p>© 2025 Mi Sitio Web. Todos los derechos reservados.</p>
   </footer>
+
+  <script>
+    function toggleInfo(id) {
+      const element = document.getElementById(id);
+      element.style.display = element.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </body>
 </html>
