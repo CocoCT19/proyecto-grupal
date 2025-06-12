@@ -49,42 +49,51 @@
   <div class="section">
     <h2>Ejemplo Interactivo con JavaScript</h2>
     <p>Haz clic en el botón para mostrar un saludo:</p>
-    <button onclick="mostrarSaludo()">Saludar con JavaScript</button>
-    <p class="resultado" id="saludo-js"></p>
-  </div>
-
-  <!-- Sección de PHP -->
-  <div class="section">
-    <h2>Ejemplo Dinámico con PHP</h2>
-    <p>El saludo generado con PHP según la hora del servidor es:</p>
-    <div class="resultado">
-      <?php
-        date_default_timezone_set("America/Bogota"); // Ajusta a tu zona
-        $hora = date("H");
-        $usuario = "Visitante";
-
-        if ($hora < 12) {
-          $mensaje = "Buenos días";
-        } elseif ($hora < 18) {
-          $mensaje = "Buenas tardes";
-        } else {
-          $mensaje = "Buenas noches";
-        }
-
-        echo "$mensaje, $usuario.";
-      ?>
-    </div>
-  </div>
-
-  <script>
-    function mostrarSaludo() {
-      const nombre = prompt("¿Cuál es tu nombre?");
-      const saludo = nombre ? `¡Hola, ${nombre}! Bienvenido.` : "¡Hola! Bienvenido.";
-      document.getElementById("saludo-js").textContent = saludo;
+    <button onclick="mostra<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Información sobre JavaScript y PHP</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f9f9f9;
     }
-  </script>
+    h1 {
+      text-align: center;
+    }
+    section {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #quizResult {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
 
-</body>
-</html>
+  <h1>Información sobre JavaScript y PHP</h1>
+
+  <section>
+    <h
+
 
 
