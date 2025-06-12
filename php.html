@@ -2,89 +2,81 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Sección: PHP y JavaScript</title>
+  <title>JavaScript y PHP</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 40px;
-      background-color: #f9f9f9;
-    }
-
-    h1, h2 {
-      color: #2c3e50;
-    }
-
-    .section {
-      background-color: #fff;
-      border-radius: 10px;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
       padding: 20px;
-      margin-bottom: 30px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
-
+    h1 {
+      text-align: center;
+    }
+    .card {
+      background-color: white;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
     button {
-      padding: 10px 20px;
-      border: none;
-      background-color: #3498db;
+      padding: 10px 15px;
+      margin-top: 10px;
+      background-color: #007bff;
       color: white;
+      border: none;
       border-radius: 5px;
       cursor: pointer;
     }
-
     button:hover {
-      background-color: #2980b9;
+      background-color: #0056b3;
     }
-
-    .resultado {
+    .info {
+      display: none;
       margin-top: 15px;
-      font-weight: bold;
     }
   </style>
 </head>
 <body>
+  <h1>Información sobre JavaScript y PHP</h1>
 
-  <h1>Sección PHP y JavaScript</h1>
-
-  <!-- Sección de JavaScript -->
-  <div class="section">
-    <h2>Ejemplo Interactivo con JavaScript</h2>
-    <p>Haz clic en el botón para mostrar un saludo:</p>
-    <button onclick="mostrarSaludo()">Saludar con JavaScript</button>
-    <p class="resultado" id="saludo-js"></p>
+  <div class="card">
+    <h2>JavaScript</h2>
+    <button onclick="toggleInfo('jsInfo')">Mostrar/Ocultar Información</button>
+    <div class="info" id="jsInfo">
+      <p><strong>JavaScript</strong> es un lenguaje de programación del lado del cliente, usado principalmente para crear páginas web interactivas. Se ejecuta en el navegador del usuario.</p>
+      <ul>
+        <li>Manipula el DOM</li>
+        <li>Valida formularios</li>
+        <li>Interacción sin recargar la página (AJAX)</li>
+      </ul>
+    </div>
   </div>
 
-  <!-- Sección de PHP -->
-  <div class="section">
-    <h2>Ejemplo Dinámico con PHP</h2>
-    <p>El saludo generado con PHP según la hora del servidor es:</p>
-    <div class="resultado">
-      <?php
-        date_default_timezone_set("America/Bogota"); // Ajusta a tu zona
-        $hora = date("H");
-        $usuario = "Visitante";
-
-        if ($hora < 12) {
-          $mensaje = "Buenos días";
-        } elseif ($hora < 18) {
-          $mensaje = "Buenas tardes";
-        } else {
-          $mensaje = "Buenas noches";
-        }
-
-        echo "$mensaje, $usuario.";
-      ?>
+  <div class="card">
+    <h2>PHP</h2>
+    <button onclick="toggleInfo('phpInfo')">Mostrar/Ocultar Información</button>
+    <div class="info" id="phpInfo">
+      <p><strong>PHP</strong> es un lenguaje de programación del lado del servidor, diseñado para el desarrollo web dinámico. Se ejecuta en el servidor antes de enviar la página al navegador.</p>
+      <ul>
+        <li>Accede a bases de datos</li>
+        <li>Genera contenido dinámico</li>
+        <li>Trabaja con formularios</li>
+      </ul>
     </div>
   </div>
 
   <script>
-    function mostrarSaludo() {
-      const nombre = prompt("¿Cuál es tu nombre?");
-      const saludo = nombre ? `¡Hola, ${nombre}! Bienvenido.` : "¡Hola! Bienvenido.";
-      document.getElementById("saludo-js").textContent = saludo;
+    function toggleInfo(id) {
+      const info = document.getElementById(id);
+      info.style.display = (info.style.display === "none" || info.style.display === "") ? "block" : "none";
     }
   </script>
-
 </body>
 </html>
+
+
 
 
